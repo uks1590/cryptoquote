@@ -1,0 +1,41 @@
+  ID ; Quote    ; Author       ;   Submitted_by
+    1; "I have no special talent.I'm paasionately curious."  ;     Albert Einstein      ;  Hiranmayi
+     2;"Wisely and slow.They stumble that run fast."   ;           William Shakespeare   ;  Hiranmayi
+     3;"If you judge people,you have no time to love them."   ;    Mother Teresa     ;  Hiranmayi
+     4;"Whenever you find yourself on the side of the majority,it is time to pause and reflect." ; Mark Twain  ; Hiranmayi
+     5;"All that we are is the result of what we have thought." ;  Buddha     ; Hiranmayi
+     6;"The most courageous act is still to thinnk for yourself." ; Coco Chanel; Hiranmayi
+     7; "Stay hungry.Stay foolish."     ; Steve Jobs  ; Hiranmayi
+     8;"Insanity:Doing the same thing again and again and expecting different results." ; Albert Einstein ; Hiranmayi
+     9;"The greatest wealth is to live content with little." ; Plato ; Hiranmayi
+    10;"The future belongs to those who prepare for it today." ; Malcolm  ;Hiranmayi
+    11;"The successful warrior is the average man,with  laser-like focus." ;  Bruce Lee  ; Hiranmayi
+    12;"Those who dare to fail miserably can achieve greatly."  ;  John F.Kennedy    ; Hiranmayi
+    13;"A great man is always willing to be little."  ; Ralph W.Emerson    ; Hiranmayi
+    14;"Don't count the days,make the days count."  ;  Muhammad Ali      ; Hiranmayi
+    15;"In order to be irreplaceable one must always be different"; Coco Chanel     ;Hiranmayi
+    16;"Be kind whenever possible.It's always possible."   ;  Dalai Lama     ; Hiranmayi
+    17;"I like criticism.It makes me strong." ; LeBron James  ; Hiranmayi
+    18;"Well done is better than well said."   ; Benjamin Franklin  ; Hiranmayi
+    19;"The root of suffering is attachment."   ;  Buddha   ; Hiranmayi
+    20;"Keep calm and carry on."   ; Winston Churchill  ;Hiranmayi
+    21;"To be or not to be,that is the question."   ; William Shakespeare ; Hiranmayi
+    22;"Early to bed,early to rise makes a man healthy,wealthyand wise." ;   Benjamin Franklin ;Hiranmayi
+    23;"The best things in life are free.The second best thingsare very expensive." ;  Coco Chanel  ;Hiranmayi
+   24;"Float like a butterfly.Sting like a bee." ; Muhammad Ali ; Hiranmayi
+    25;"Non-violence is the weapon of the strong." ; Mahatma Gandhi   ; Hiranmayi
+    26;"Peace begins with a smile."  ;  Mother Teresa   ; Hiranmayi
+    27;"The only thing that interfaces with my learning is my education." ; Albert Einstein  ; Hiranmayi
+    28;"Education is the most powerful weapon which you can useto change the world." ;        Nelson Mandela ;  Hiranmayi
+    29;"It always seems impossible until it's done."  ; Nelson Mandela   ;    Hiranmayi
+    30;"Try not to become a man of success but rather to become a man of value." ;   Albert Einstein   ;  Hiranmayi
+    31;"The weak can never forgive.Forgiveness is the attribue of the strong."   ;  Mahatma Gandhi   ; Hiranmayi
+    32;"Turn your wounds into your wisdom."  ;  Oprah Winfrey  ;   Hiranmayi
+    33;"It's not how much you have that makes people look upto you,it's who you are.";' Elvis Presley  ; Hiranmayi
+    34;"A man who stands for nothing will fall for anything."; Malcolm   ; Hiranmayi
+    35;"Love all,trust a few,do wrong to none."  ;  William Shakespeare    ;Hiranmayi
+    36;"The path to success is to take massive,determined action.";Tony Robbins    ; Hiranmayi
+    37;"God helps those that help themselves."  ; Benjamin Franklin   ; Hiranmayi
+    38;"By failing to prepare,you are preparing to fail." ; Benjamin Franklin    ;Hiranmayi
+    39;"Do something worth remembering."  ; Elvis Presley         ; Hiranmayi
+    40;"Elegance is refusal."  ;  Coco Chanel       ; Hiranmayi
