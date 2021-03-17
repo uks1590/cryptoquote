@@ -6,6 +6,18 @@ import string
 # Import Random to shuffle the List
 import random
 
+# Method for Integrating all functions
+# Author: Keertan 
+print("Functions: getStudentWithMostQuotes, getQuotesByAuthor, getQuotesByStudent, getAuthorAndQuoteCount, generateCryptoQuoteList, 
+getSortedAuthors, getWordListByFrequency, getQuotesCountByAuthor, getAuthorWithLessQuotes, getShortestQuote, getAuthorCount, 
+getLongestQuote, getAuthorWithMostQuotes, getSubmittedByAndQuoteCount, getQuotesContainingWord, getStudentListWithNoQuotes")
+Function_Menu = input("Choose and type which function to run on the cryptoquote generated")
+
+if Function_Menu == "":
+    pass
+
+if Function_Menu: 
+    pass
 
 #1. Class for representing a single QUOTE
 # id, quote, author, submitted_by
