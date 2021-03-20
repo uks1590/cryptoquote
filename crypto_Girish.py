@@ -41,37 +41,6 @@ class QuotesList:
 
     def add(self, quote):
         self.quotes_list.append(quote)
-        
-        
-        
-     # Karthik,s code for sorting based on author
-        #Method used inside sorting authors in quotes
-def mysort(line):
-  return line.split(",")[2]
-     # Karthik,s code for sorting based on author
-
-#Method for sorting the quotes based on author names
-def getSortedAuthors(file_name): 
-    
-      file = open(file_name)
-      lines_data = file.readlines()
-
-      for line in sorted(lines_data, key=mysort):
-       print(line)
-
-      file.close()
-      return sorted(lines_data, key=mysort)
-
-        
-# This method chooses a random quote from the collection
-# The quote is converted to the crypto quote
-# The crypto quote is shown on the HTML page
-# Author : Ishana D
-    def showRandomCryptoInHTML(self):
-        return self
-        
-
-
 
 # Generates Crypto Quote for the input Quote
 def generateCryptoQuote(quote):
@@ -97,11 +66,6 @@ def generateCryptoQuote(quote):
 
     return cryptoquote
 
-    #author:vikranth
-    #this method returns all the students who did not submit 
-    #any quotes to the collection
-    def getStudentListWithNoQuotes():
-        pass
 
 # Method for creating the  Quote object
 def process_file(file_name):
@@ -123,6 +87,3 @@ def process_file(file_name):
 quotes_list = process_file("quotes_in_excel.csv")
 print(quotes_list)
     
-    
-    quoteslist_sort_author = getSortedAuthors("quotes_in_excel.csv")
-print(quoteslist_sort_author) 
