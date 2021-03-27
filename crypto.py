@@ -6,18 +6,6 @@ import string
 # Import Random to shuffle the List
 import random
 
-# Method for Integrating all functions
-# Author: Keertan 
-print("Functions: getStudentWithMostQuotes, getQuotesByAuthor, getQuotesByStudent, getAuthorAndQuoteCount, generateCryptoQuoteList, 
-getSortedAuthors, getWordListByFrequency, getQuotesCountByAuthor, getAuthorWithLessQuotes, getShortestQuote, getAuthorCount, 
-getLongestQuote, getAuthorWithMostQuotes, getSubmittedByAndQuoteCount, getQuotesContainingWord, getStudentListWithNoQuotes")
-Function_Menu = input("Choose and type which function to run on the cryptoquote generated")
-
-if Function_Menu == "":
-    pass
-
-if Function_Menu: 
-    pass
 
 #======= Class Quote =============================
 # Class for representing a single QUOTE
@@ -175,7 +163,13 @@ class QuotesList:
         file = open("quotes_in_excel.csv", "w", encoding='iso-8859-15')
         file.write(str(self.quotes_list))
         file.close()
+
     
+    # ============= Method No: 12 (Keertan Chennupati) ===============
+    # Purpose: Integrate all the functions by providing the user with a menu of actions to choose from
+    print("Actions:\n 0: quit program\n 1: method")
+
+
         
     # Karthik,s code for sorting based on author
     #Method used inside sorting authors in quotes
