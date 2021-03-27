@@ -133,6 +133,20 @@ class QuotesList:
             sorted_dict[w] = word_dict[w]
 
         return sorted_dict
+    # ============= Method No: 16 (Pranav) ===============
+    # Purpose: This method returns the count of quotes submitted by the author
+
+    def getCountOfQuotesByAuthor(self, author_name):
+        quote_count = 0
+        for x in self.quotes_list:
+            p = x.author.strip()
+            q = author_name.strip()
+            if p == q:
+                quote_count = quote_count + 1
+        return quote_count
+
+        # TODO
+        return quote_count
 
     # ============= Method No: 29 (Siva Jasthi) ===============
     # Purpose: The method returns a mini-collection of quotes containing the bad words
@@ -253,6 +267,11 @@ print("=== Method #13 (Nikhita Gollamudi) getWordListByFrequency( ) method ===="
 word_frequency = quotes_list_object.getWordListByFrequency()
 print(word_frequency)
 
+# =================pranav mukkara #16======================
+print("=== Method #16 (Pranav mukkara) getCountOfQuotesByauthor(author_count)method ====")
+author_name = "Harvey Specter"
+quote_count = quotes_list_object.getCountOfQuotesByAuthor(author_name)
+print(quote_count)
 
 # ========= Nikhitha Gollamudi: Method # 29 ========================
 print("===  Method #29 (Nikhitha Gollamudi) def getQuotesContainingBadWords()  method ====")
