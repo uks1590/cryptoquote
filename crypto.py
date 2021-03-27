@@ -167,8 +167,10 @@ class QuotesList:
     
     # ============= Method No: 12 (Keertan Chennupati) ===============
     # Purpose: Integrate all the functions by providing the user with a menu of actions to choose from
-    print("Actions:\n 0: quit program\n 1: method")
-
+    print("Actions:\n 0: Quit program\n 1: getStudentCount\n 2: getStudentWithMostQuotes\n 3: getQuotesByAuthor\n 4: getQuotesByStudent\n 5: getAuthorAndQuoteCount\n 6: generateCryptoQuoteList")
+    print(" 7: showRandomCryptoInHTML\n 8: showRandomQuoteInHTML\n 9: sortBySubmittedBy\n 10: getSortedAuthors\n 11: presentInterface\n 12: getWordListByFrequency\n 13: getCountOfQuotesByStudent")
+    print(" 14: getRandomQuote\n 15: getQuotesCountByAuthor\n 16: getAuthorWithLessQuotes\n 17: deleteQuote\n 18: getShortestQuote\n 19: getAuthorCount\n 20: getLongestQuote\n 21: getAuthorWithMostQuotes")
+    print(" 22: getQuotesContainingWord\n 23: addQuote\n 24: getStudentListWithNoQuotes\n 25: getStudentWithLeastQuotes\n 26: updateQuote\n 27: getQuotesContainingBadWords\n 28: saveToFile\n 29: getQuotesContainingGoodWords")
 
         
     # Karthik,s code for sorting based on author
