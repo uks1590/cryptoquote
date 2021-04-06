@@ -164,8 +164,31 @@ class QuotesList:
         file.write(str(self.quotes_list))
         file.close()
 
+    
+    # ============= Method No: 12 (Keertan Chennupati) ===============
+    # Purpose: Integrate all the functions by providing the user with a menu of actions to choose from
+    while True: 
+        def presentInterface():
+            print("Actions:\n 0: Quit program\n 1: getStudentCount\n 2: getStudentWithMostQuotes\n 3: getQuotesByAuthor\n 4: getQuotesByStudent\n 5: getAuthorAndQuoteCount\n 6: generateCryptoQuoteList")
+            print(" 7: showRandomCryptoInHTML\n 8: showRandomQuoteInHTML\n 9: sortBySubmittedBy\n 10: getSortedAuthors\n 11: presentInterface\n 12: getWordListByFrequency\n 13: getCountOfQuotesByStudent")
+            print(" 14: getRandomQuote\n 15: getQuotesCountByAuthor\n 16: getAuthorWithLessQuotes\n 17: deleteQuote\n 18: getShortestQuote\n 19: getAuthorCount\n 20: getLongestQuote\n 21: getAuthorWithMostQuotes")
+            print(" 22: getQuotesContainingWord\n 23: addQuote\n 24: getStudentListWithNoQuotes\n 25: getStudentWithLeastQuotes\n 26: updateQuote\n 27: getQuotesContainingBadWords\n 28: saveToFile\n 29: getQuotesContainingGoodWords")
 
+            input = input("Select the method you would like to run\n")
 
+            if input == "0":
+                output = presentInterface
+
+            if input == "1":
+                output = getStudentCount()
+
+            if input == "2": 
+                output = getStudentWithMostQuotes()
+
+            return output
+        
+
+        
     # Karthik,s code for sorting based on author
     #Method used inside sorting authors in quotes
     def mysort(line):
@@ -225,87 +248,6 @@ class QuotesList:
     def getStudentListWithNoQuotes():
         pass
 
-#input = input("Select the method you would like to run\n")   
-# ============= Method No: 12 (Keertan Chennupati) ===============
-# Purpose: Integrate all the functions by providing the user with a menu of actions to choose from
-output = ""
-def presentInterface():
-    quotes_list_object = QuotesList.createWithFileName("quotes_in_excel.csv") 
-
-    print("Actions:\n 0: Quit program\n 1: getStudentCount\n 2: getStudentWithMostQuotes\n 3: getQuotesByAuthor\n 4: getQuotesByStudent\n 5: getAuthorAndQuoteCount\n 6: generateCryptoQuoteList")
-    print(" 7: showRandomCryptoInHTML\n 8: showRandomQuoteInHTML\n 9: sortBySubmittedBy\n 10: getSortedAuthors\n 11: presentInterface\n 12: getWordListByFrequency\n 13: getCountOfQuotesByStudent")
-    print(" 14: getRandomQuote\n 15: getQuotesCountByAuthor\n 16: getAuthorWithLessQuotes\n 17: deleteQuote\n 18: getShortestQuote\n 19: getAuthorCount\n 20: getLongestQuote\n 21: getAuthorWithMostQuotes")
-    print(" 22: getQuotesContainingWord\n 23: addQuote\n 24: getStudentListWithNoQuotes\n 25: getStudentWithLeastQuotes\n 26: updateQuote\n 27: getQuotesContainingBadWords\n 28: saveToFile\n 29: getQuotesContainingGoodWords")
-
-    response = input("Select the method you would like to run\n")
-
-    if response == 0:
-        output = "Quit Program"
-    if response == 1:
-        output = quotes_list_object.getStudentCount()
-    if response == 2: 
-        output = getStudentWithMostQuotes()
-    if response == 3:
-        output = getQuotesByAuthor()
-    if response == 4:
-        output = getQuotesByStudent()
-    if response == 5:
-        output = getAuthorAndQuoteCount()
-    if response == 6:
-        output = generateCryptoQuoteList()
-    if response == 7:
-        output = showRandomCryptoInHTML()
-    if response == 8:
-        output = showRandomQuoteInHTML()
-    if response == 9:
-        output = sortBySubmittedBy()
-    if response == 10:
-        output = getSortedAuthors()
-    if response == 11:
-        pass
-    if response == 12:
-        output = getWordListByFrequency()
-    if response == 13:
-        print("=== Method #13 (Nikhita Gollamudi) getWordListByFrequency( ) method ====")
-        word_frequency = quotes_list_object.getWordListByFrequency()
-        print(word_frequency)
-    if response == 14:
-        output = getRandomQuote
-    if response == 15:
-        output = getQuotesCountByAuthor()
-    if response == 16:
-        output = getAuthorWithLessQuotes()
-    if response == 17:
-        output = deleteQuote()
-    if response == 18:
-        output = getShortestQuote()
-    if response == 19:
-        output = getAuthorCount()
-    if response == 20:
-        output = getLongestQuote()
-    if response == 21:
-        output = getAuthorWithMostQuotes()
-    if response == 22:
-        output = getQuotesContainingWord()
-    if response == 23:
-        output = addQuote()
-    if response == 24:
-        output = getStudentListWithNoQuotes()
-    if response == 25:
-        output = getStudentWithLeastQuotes()
-    if response == 26:
-        output = updateQuote()
-    if response == 27:
-        output = getQuotesContainingBadWords()
-    if response == 28:
-        output = saveToFile()
-    if response == 29:
-        output = getQuotesContainingGoodWords()
-        
-    return output
-
-
-
 #========================= STARTING POINT ==========================
 # All the testing happens here
 # Please ensure that you print some info about the method invocation and the results
@@ -345,10 +287,6 @@ mini_collection_29.printQuotes()
 # ========= Nikhita Gollamudi: Method # 30 ========================
 print("=== Nikhita Gollamudi: Method #30; saveToFile( ) method ====")
 #quotes_list_object.saveToFile()
-
-
-out = presentInterface()
-print(out)
 
 
     
