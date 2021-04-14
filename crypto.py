@@ -240,7 +240,7 @@ def presentInterface():
     response = input("Select the method you would like to run\n")
 
     if response == 0:
-        output = "Quit Program"
+        exit()
     if response == 1:
         output = quotes_list_object.getStudentCount()
     if response == 2: 
@@ -302,7 +302,7 @@ def presentInterface():
     if response == 29:
         output = getQuotesContainingGoodWords()
         
-    return output
+    
 
 
 
@@ -346,9 +346,10 @@ mini_collection_29.printQuotes()
 print("=== Nikhita Gollamudi: Method #30; saveToFile( ) method ====")
 #quotes_list_object.saveToFile()
 
-
-out = presentInterface()
-print(out)
+loop = 1
+while loop == 1:
+    out = presentInterface()
+    print(out)
 
 
     
