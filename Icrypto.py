@@ -144,39 +144,21 @@ class QuotesList:
                     count = freq
                     student = x
         return student
-  
+   
 
     # ============= Method No: 4 (Anjneya Kumar) ===============
     # Purpose: The method returns a mini-collection of quotes by a certain author (given by the user)
-    def getQuotesbyAuthor(self, author_name):
-        # this is the mini collection we want to return
-        quotes_list_by_author_name = []
-        for x in self.quotes_list:
-            current_author = x.author
-            current_author = current_author.strip()
-            if current_author == author_name:
-                quotes_list_by_author_name.append(x)
-                   
-        # create a mini quotes collection
-        quotes_mini_collection = QuotesList(quotes_list_by_author_name)
-        return quotes_mini_collection;
-       
+    #TODO: 1. you need to take the author as the input parameter to the method
+    #TODO: 2. You need to build a mini collection and return it
+    def getQuotesByAuthor(self):
+        pass
 
-   # ============= Method No: 5 (Arjun > Jasthi) ===============
+
+
+    # ============= Method No: 5 (Arjun) ===============
     # Given a student name, return a mini collection of all the quotes
-    def getQuotesByStudent(self, student_name):
-        # this is the mini collection we want to return
-        quotes_list_by_student_name = []
-        for x in self.quotes_list:
-            current_student = x.submitted_by
-            current_student = current_student.strip()
-            if current_student == student_name:
-                quotes_list_by_student_name.append(x)
-                   
-        # create a mini quotes collection
-        quotes_mini_collection = QuotesList(quotes_list_by_student_name)
-        return quotes_mini_collection;
-       
+    def getQuotesByStudent(student_name):
+        pass
 
      
     # ============= Method No: 6 (Eshaan Dhavala) ===============
@@ -342,6 +324,8 @@ class QuotesList:
 
     
 
+    
+
     # ============= Method No: 13 (Nikhitha Gollamudi) ===============
     # Purpose: This method returns the words in the quotes sorted by frequency 
     def getWordListByFrequency(self):
@@ -367,23 +351,28 @@ class QuotesList:
         return sorted_dict
 
     # ============= Method No: 14 (Shekar Motukuri) ===============
-    # Purpose: This method returns count of Quotes submitted by students(him/her) 
+    # Purpose: This method returns count of Quotes submitted by students(him/her)
+    
     def getCountOfQuotesByStudent(self, student_name):
-        user_quote_count = {}    
+        student_count = 0
+        student_string=""
+        student_name=""
+        print('testing')
+             
         for x in self.quotes_list:
-            current_user = x.submitted_by
-            #print('User: ' + current_user)
-            if current_user not in user_quote_count.keys():
-                user_quote_count[current_user] = 1
-                #print('Count: ' +  str(user_quote_count[current_user]))
-            else:
-                user_quote_count[current_user] = user_quote_count[current_user] + 1
-                #print('Count: ' +  str(user_quote_count[current_user]))
+            current_student = x.submitted_by
+            student_string+=current_student+" ";
+        #print('testing'+student_string)
+        for x in self.quotes_list:
+            current_student = x.submitted_by
+            student_count1=student_string.count(current_student)
+            if(student_count1>=student_count):
+              student_count=student_count1
+              student_name=current_student    
+        print('testing'+student_name)
+        print(student_count)  
+        return student_name
 
-        # get the count/value for the student
-        count = user_quote_count.get(student_name)
-        return count
-        
 
     # ============= Method No: 15 (Pranav Manikonda) ===============
     # Purpose: This method returns a random quote from the collection of quotes
@@ -397,19 +386,14 @@ class QuotesList:
     # ============= Method No: 16 (Pranav Mukkara) ===============
     # Purpose: This method returns the count of quotes submitted by the author
     def getCountOfQuotesByAuthor(self, author_name):
-        #quote_count = 0
-        #for x in self.quotes_list:
-        #    p = x.author.strip()
-        #    q = author_name.strip()
-        #    if p==q:
-        #        quote_count = quote_count + 1
-        #return quote_count
+        quote_count = 0
+        for x in self.quotes_list:
+            p = x.author.strip()
+            q = author_name.strip()
+            if p==q:
+                quote_count = quote_count + 1
+        return quote_count
 
-        ## Calling method 4 to build author-count dictionary
-        author_count_dictionary = self.getAuthorAndQuoteCount()
-        # get the count. if author not found, default is zero
-        count = author_count_dictionary.get(author_name,0)
-        return count
 
     # ============= Method No: 17 (Pravallika Sunkara) ===============
     # Purpose: This method returns the author who authored the least amount of quotes
@@ -672,6 +656,293 @@ class QuotesList:
 
         return cryptoquote
 
+# ============= Method No: 12 (Keertan Chennupati) ===============
+# Purpose: Integrate all the functions by providing the user with a menu of actions to choose from
+def presentInterface():
+    quotes_list_object = QuotesList.createWithFileName("quotes_in_excel.csv") 
+
+    print("Actions:\n 0: Quit program\n 1: getStudentCount\n 2: getStudentWithMostQuotes\n 3: getQuotesByAuthor\n 4: getQuotesByStudent\n 5: getAuthorAndQuoteCount\n 6: generateCryptoQuoteList")
+    print(" 7: showRandomCryptoInHTML\n 8: showRandomQuoteInHTML\n 9: sortBySubmittedBy\n 10: getSortedAuthors\n 11: presentInterface\n 12: getWordListByFrequency\n 13: getCountOfQuotesByStudent")
+    print(" 14: getRandomQuote\n 15: getQuotesCountByAuthor\n 16: getAuthorWithLessQuotes\n 17: deleteQuote\n 18: getShortestQuote\n 19: getAuthorCount\n 20: getLongestQuote\n 21: getAuthorWithMostQuotes")
+    print(" 22: getQuotesContainingWord\n 23: addQuote\n 24: getStudentListWithNoQuotes\n 25: getStudentWithLeastQuotes\n 26: updateQuote\n 27: getQuotesContainingBadWords\n 28: saveToFile\n 29: getQuotesContainingGoodWords")
+
+    response = input("Select the method you would like to run\n")
+
+    if response == 0:
+        exit()
+    if response == 1:
+        pass
+    if response == 2:
+        #output = getStudentCount()
+        print("=== Method #2 (Nikhitha Gollamudi) getStudentCount( ) method ====")
+        student_count = quotes_list_object.getStudentCount()
+        print(student_count)
+    if response == 3: 
+        #output = getStudentWithMostQuotes()
+        print("=== Method #2 (Nikhitha Gollamudi) getStudentCount( ) method ====")
+        student_with_most_quotes = quotes_list_object.getStudentWithMostQuotes()
+        print(student_with_most_quotes)
+    if response == 4:
+        #output = getQuotesByAuthor()
+        print("=== Method #4 (Anjneya Kumar) def getQuotesByAuthor( ) method ====")
+        mini_quote_collection = quotes_list_object.getQuotesByAuthor()
+        #mini_quote_collection.printQuotes()
+    if response == 5:
+        #output = getQuotesByStudent()
+        pass
+    if response == 6: 
+        #output = getAuthorAndQuoteCount()
+        print("=== Method #6 (Eshaan Dhavala) def getAuthorAndQuoteCount( ) method ====")
+        author_count_dictionary = quotes_list_object.getAuthorAndQuoteCount()
+        pp.pprint(author_count_dictionary)
+    if response == 7:
+        #output = showRandomCryptoInHTML()
+        pass
+    if response == 8:
+        pass
+    if response == 9:
+        #output = showRandomQuoteInHTML()
+        print("=== Method #9 (Jaya Varanasi) def showRandomQuoteInHTML( )method ====")
+        quotes_list_object.showRandomQuoteInHTML( )
+    if response == 10:
+        #output = sortBySubmittedBy()
+        print("=== Method #10 (Girish Kumar Sure) def sortBySubmittedBy( ) method ====")
+        sorted_submittedby_list = quotes_list_object.sortBySubmittedBy()
+        print(sorted_submittedby_list)
+    if response == 11:
+        #output = getSortedAuthors()
+        print("=== Method #11.1 (Karthik Uppala) def getSortedAuthors( )method ====")
+        sorted_authors_list_x = quotes_list_object.getSortedAuthors( )
+        #print(sorted_authors_list_x)
+
+        print("=== Method #11.2 (Karthik Uppala) def getSortedAuthors( )method ====")
+        q1 = Quote(1, "Hello", "A1", "S1")
+        q2 = Quote(2, "How are you?", "X", "S1")
+        q3 = Quote(3, "OK", "A1", "S1")
+        q4 = Quote(4, "Great", "B3", "S1")
+        q5 = Quote(5, "Good to know", "A1", "S1")
+        q6 = Quote(6, "TTYL", "A1", "S1")
+        q7 = Quote(7, "Bye now", "Y", "S1")
+        q8 = Quote(8, "See ya!", "A1", "S1")
+        q9 = Quote(9, "Bye Bye!", "P2", "S2")
+        quotes_list = [q1,q2,q3,q4,q5,q6,q7,q8, q9]
+        uppala_QuotesList_object = QuotesList(quotes_list)
+        sorted_authors_list_x = uppala_QuotesList_object.getSortedAuthors()
+        print(sorted_authors_list_x)
+    if response == 12:
+        pass
+    if response == 13:
+        #output = getWordListByFrequency()
+        print("=== Method #13 (Nikhita Gollamudi) getWordListByFrequency( ) method ====")
+        word_frequency = quotes_list_object.getWordListByFrequency()
+        print(word_frequency)
+
+        print("=== Method #13.2 (Nikhita Gollamudi) getWordListByFrequency( ) method ====")
+        q1 = Quote(1, "Hello", "A1", "S1")
+        q2 = Quote(2, "How are you?", "A1", "S1")
+        q3 = Quote(3, "OK", "A1", "S1")
+        q4 = Quote(4, "Great", "A1", "S1")
+        q5 = Quote(5, "Good to know", "A1", "S1")
+        q6 = Quote(6, "TTYL", "A1", "S1")
+        q7 = Quote(7, "Bye now", "A1", "S1")
+        q8 = Quote(8, "See ya!", "A1", "S1")
+        q9 = Quote(9, "Bye Bye!", "A2", "S2")
+        quotes_list = [q1,q2,q3,q4,q5,q6,q7,q8, q9]
+        nikhita_QuotesList_object = QuotesList(quotes_list)
+        word_frequency = nikhita_QuotesList_object.getWordListByFrequency()
+        pp.pprint(word_frequency)
+    if response == 14:
+        #output = getCountOfQuotesByStudent()
+        print("=== Method #14.1 (Soma Modukuri) getCountOfQuotesByStudent(student_name)method ====")
+        student_name = "Jasthi"
+        quote_count = quotes_list_object.getCountOfQuotesByStudent(student_name)
+        print(quote_count)
+
+        print("=== Method #14.2 (Soma Modukuri) getCountOfQuotesByStudent(student_name)method ====")
+        q1 = Quote(1, "Hello", "A1", "S1")
+        q2 = Quote(2, "How are you?", "A1", "S1")
+        q3 = Quote(3, "OK", "A2", "S2")
+        q4 = Quote(4, "Great", "A3", "S2")
+        q5 = Quote(5, "OK", "A2", "S3")
+        q6 = Quote(6, "OK", "A2", "S4")
+        quotes_list = [q1,q2,q3,q4,q5, q6]
+        soma_QuotesList_object = QuotesList(quotes_list)
+        quote_count = quotes_list_object.getCountOfQuotesByStudent("S1")
+        print("Count of quotes submitted by S1 : " + quote_count)
+    if response == 15:
+        #output = getRandomQuote()
+        print("=== Method #15.1 (Pranav Manikonda) getRandomQuote method ====")
+        random_quote_1 = quotes_list_object.getRandomQuote()
+        print(random_quote_1)
+
+        print("=== Method #15.2  (Pranav Manikonda) getRandomQuote method ====")
+        q1 = Quote(1, "Hello", "A1", "S1")
+        q2 = Quote(2, "How are you?", "A1", "S1")
+        q3 = Quote(3, "OK", "A1", "S1")
+        q4 = Quote(4, "Great", "A1", "S1")
+        q5 = Quote(5, "Good to know", "A1", "S1")
+        q6 = Quote(6, "TTYL", "A1", "S1")
+        q7 = Quote(7, "Bye now", "A1", "S1")
+        q8 = Quote(8, "See ya!", "A1", "S1")
+        quotes_list = [q1,q2,q3,q4,q5,q6,q7,q8]
+        pranav_QuotesList_object = QuotesList(quotes_list)
+        random_quote_2 = pranav_QuotesList_object.getRandomQuote()
+        print(random_quote_2)
+    if response == 16:
+        #output = getQuotesCountByAuthor()
+        print("=== Method #16.1 (Pranav mukkara) getCountOfQuotesByAuthor(author_count)method ====")
+        author_name = "unknown"
+        quote_count = quotes_list_object.getCountOfQuotesByAuthor(author_name)
+        print(quote_count)
+
+        print("=== Method #16.2 (Pranav mukkara) getCountOfQuotesByAuthor(author_count)method ====")
+        q1 = Quote(1, "Hello", "A1", "S1")
+        q2 = Quote(2, "How are you?", "A1", "S1")
+        q3 = Quote(3, "OK", "A2", "S1")
+        q4 = Quote(4, "Great", "A2", "S1")
+        q5 = Quote(5, "Good to know", "A3", "S1")
+        q6 = Quote(6, "TTYL", "A3", "S1")
+        q7 = Quote(7, "Bye now", "A1", "S1")
+        q8 = Quote(8, "See ya!", "A1", "S1")
+        quotes_list = [q1,q2,q3,q4,q5,q6,q7,q8]
+        mukkara_QuotesList_object = QuotesList(quotes_list)
+        quote_count = quotes_list_object.getCountOfQuotesByAuthor("A1")
+        print(quote_count)
+    if response == 17:
+        #output = getAuthorWithLessQuotes()
+        print("=== Method #17 (Pravallika Sunkara); getAuthorWithLessQuotes() method ====")
+        author_with_less_quotes = quotes_list_object.getAuthorWithLessQuotes()    
+        print(author_with_less_quotes)
+    if response == 18:
+        #output = deleteQuote()
+        print("=== Method #18.2 (Nikhitha Gollamudi)  deleteQuote( ) method ====")
+        q1 = Quote(1, "Hello", "A1", "S1")
+        q2 = Quote(2, "How are you?", "A1", "S1")
+        q3 = Quote(3, "OK", "A1", "S1")
+        q4 = Quote(4, "Great", "A1", "S1")
+        quotes_list = [q1,q2,q3,q4]
+        nikhitha_QuotesList_object = QuotesList(quotes_list)
+        nikhitha_QuotesList_object.printQuotes()
+        quote_deleted = nikhitha_QuotesList_object.deleteQuote(1)
+        print(quote_deleted)
+        nikhitha_QuotesList_object.printQuotes()
+    if response == 19:
+        #output = getShortestQuote()
+        print("=== Method #19.1  (Sahasra Tummala) getShortestQuote( ) method ====")
+        shortest_quotation = quotes_list_object.getShortestQuote( )
+        print(shortest_quotation)
+
+        print("=== Method #19.2  (Sahasra Tummala) getShortestQuote( ) method ====")
+        q1 = Quote(1, "Hello", "A1", "S1")
+        q2 = Quote(2, "How are you?", "A1", "S1")
+        q3 = Quote(3, "OK", "A1", "S1")
+        q4 = Quote(4, "Great", "A1", "S1")
+        quotes_list = [q1,q2,q3,q4]
+        my_own_QuotesList_object = QuotesList(quotes_list)
+        #my_own_QuotesList_object.printQuotes()
+        shortest_quotation = my_own_QuotesList_object.getShortestQuote( )
+        print(shortest_quotation)
+    if response == 20:
+        #output = getAuthorCount()
+        print("=== Method #20  (Happy Josyula) getAuthorCount( ) method ====")
+        author_count = quotes_list_object.getAuthorCount( )
+        print(author_count)
+    if response == 21:
+        #output = getLongestQuote()
+        print("=== Method #21.1  (Soma Modukuri) getLongestQuote( ) method ====")
+        longest_quote = quotes_list_object.getLongestQuote( )
+        print(longest_quote)
+
+        print("=== Method #21.2  (Soma Modukuri) getLongestQuote( ) method ====")
+        q1 = Quote(1, "Hello", "A1", "S1")
+        q2 = Quote(2, "How are you?", "A1", "S1")
+        q3 = Quote(3, "OK", "A1", "S1")
+        q4 = Quote(4, "Great", "A1", "S1")
+        quotes_list = [q1,q2,q3,q4]
+        my_own_QuotesList_object = QuotesList(quotes_list)
+        longest_quotation = my_own_QuotesList_object.getLongestQuote( )
+        print(longest_quotation)
+    if response == 22:
+        #output = getAuthorWithMostQuotes()
+        print("=== Method #22.1 (Sravamti Manikonda) getAuthorWithMostQuotes( ) method ====")
+        author_with_most_quotes = quotes_list_object.getAuthorWithMostQuotes()    
+        print(author_with_most_quotes)
+
+        print("=== Method #22.2  (Sravamti Manikonda) getAuthorWithMostQuotes( ) method ====")
+        q1 = Quote(1, "Hello", "A1", "S1")
+        q2 = Quote(2, "How are you?", "A1", "S1")
+        q3 = Quote(3, "OK", "A2", "S1")
+        q4 = Quote(4, "Great", "A3", "S1")
+        q5 = Quote(5, "OK", "A2", "S1")
+        q6 = Quote(6, "OK", "A2", "S1")
+        quotes_list = [q1,q2,q3,q4,q5, q6]
+        sravanti_QuotesList_object = QuotesList(quotes_list)
+        author_with_most_quotes = sravanti_QuotesList_object.getAuthorWithMostQuotes( )
+        print(author_with_most_quotes)
+    if response == 23: 
+        #output = getSubmittedByAndQuoteCount()
+        print("=== Method #23.1 (Sreya Andalkovil) def getSubmittedByAndQuoteCount ( ) method ====")
+        submittedby_count_dictionary = quotes_list_object.getSubmittedByAndQuoteCount()
+        pp.pprint(submittedby_count_dictionary)
+
+        print("=== Method #23.2  (Sreya Andalkovil) def getSubmittedByAndQuoteCount ( ) method ====")
+        q1 = Quote(1, "Hello", "A1", "S1")
+        q2 = Quote(2, "How are you?", "A1", "S1")
+        q3 = Quote(3, "OK", "A2", "S2")
+        q4 = Quote(4, "Great", "A3", "S2")
+        q5 = Quote(5, "OK", "A2", "S3")
+        q6 = Quote(6, "OK", "A2", "S4")
+        quotes_list = [q1,q2,q3,q4,q5, q6]
+        shreya_QuotesList_object = QuotesList(quotes_list)
+        submittedby_count_dictionary = shreya_QuotesList_object.getSubmittedByAndQuoteCount()
+        pp.pprint(submittedby_count_dictionary)
+    if response == 24:
+        #output = getQuotesContainingWord()
+        print("=== Sumedh Ghatti: Method #24; def getQuotesContainingWord(input_word) method ====")
+        print("Searching for the quotes containing LOVE")
+        word_to_find = "Love"
+        quotes_mini_collection = quotes_list_object.getQuotesContainingWord(word_to_find)
+        uotes_mini_collection.printQuotes()
+
+        print("Searching for the quotes containing ONE")
+        word_to_find = "One"
+        quotes_mini_collection = quotes_list_object.getQuotesContainingWord(word_to_find)
+        quotes_mini_collection.printQuotes()
+    if response == 25:
+        #output = addQuote()
+        print("=== Udbhav Narani: Method #25; def addQuote(quote, author,submitted_by) method ====")
+        quote_to_be_added = quotes_list_object.addQuote("All is well", "Author 1", "Student 1");
+        print(quote_to_be_added)
+        quote_to_be_added = quotes_list_object.addQuote("All is well That ends well!", "Author 1", "Student 1");
+        print(quote_to_be_added)
+        quote_to_be_added = quotes_list_object.addQuote("All is well That ends well!", "Author 1", "Student 1");
+        print(quote_to_be_added)
+    if response == 26:
+        #output = getStudentListWithNoQuotes()
+        print("===  Method #26 (Vikrant Datta) def getStudentListWithNoQuotes()  method ====")
+        students_list_with_no_quotes = quotes_list_object.getStudentListWithNoQuotes()
+        print(students_list_with_no_quotes)
+    if response == 27:
+        #output = getStudentWithLeastQuotes()
+        print("=== Method #27 (Girish Kumar Sure) getStudentWithLeastQuotes( ) method ====")
+        student_with_least_quotes = quotes_list_object.getStudentWithLeastQuotes()    
+        print(student_with_least_quotes)
+    if response == 28:
+        #output = updateQuote()
+        print("===  Method #28 (Vishnu Vundamati) def updateQuote(self, id, quote, author, submitted_by)  method ====")
+        update_status = quotes_list_object.updateQuote(2, "test_quote", "test_author", "test_submitted_by")
+        print(update_status)
+    if response == 29:
+        #output = getQuotesContainingBadWords()
+        print("===  Method #29 (Nikhitha Gollamudi) def getQuotesContainingBadWords()  method ====")
+        mini_collection_29 = quotes_list_object.getQuotesContainingBadWords()
+        #mini_collection_29.printQuotes()
+    if response == 30:
+        #output = saveToFile()
+        print("=== Nikhita Gollamudi: Method #30; saveToFile( ) method ====")
+        #quotes_list_object.saveToFile()
+        
+    
     
 
 #========================= STARTING POINT ==========================
@@ -698,6 +969,11 @@ quotes_list_object.printQuotes()
 
 # Step 4: Now let us exercise some methods in the QuotesList
 
+loop = 1
+while loop == 1:
+    out = presentInterface()
+    print(out)
+
 
 # ========= Nikhitha Gollamudi: Method # 2 ========================
 print("=== Method #2 (Nikhitha Gollamudi) getStudentCount( ) method ====")
@@ -711,15 +987,10 @@ print(student_with_most_quotes)
 
 # ========= Anjneya Kumar: Method # 4 ========================
 print("=== Method #4 (Anjneya Kumar) def getQuotesByAuthor( ) method ====")
-print("This method invocation is giving a strange error; Looks like some indentation issues. To be investigated")
-#mini_quote_collection = quotes_list_object.getQuotesByAuthor("Gandi")
+mini_quote_collection = quotes_list_object.getQuotesByAuthor()
 #mini_quote_collection.printQuotes()
 
-
-# ========= Arjun Kumar: Method # 5 ========================
-print("=== Method #5 (Arjun Kumar) def getQuotesByStudent( ) method ====")
-mini_quote_collection = quotes_list_object.getQuotesByStudent("Hiranmayi")
-mini_quote_collection.printQuotes()
+     
 
 # ========= Eshaan Dhavala: Method # 6 ========================
 print("=== Method #6 (Eshaan Dhavala) def getAuthorAndQuoteCount( ) method ====")
@@ -787,10 +1058,10 @@ word_frequency = nikhita_QuotesList_object.getWordListByFrequency()
 pp.pprint(word_frequency)
 
 # ========= Soma Modukuri: Method # 14 ========================
-#print("=== Method #14.1 (Soma Modukuri) getCountOfQuotesByStudent(student_name)method ====")
-#student_name = "Jasthi"
-#quote_count = quotes_list_object.getCountOfQuotesByStudent(student_name)
-#print(quote_count)
+print("=== Method #14.1 (Soma Modukuri) getCountOfQuotesByStudent(student_name)method ====")
+student_name = "Jasthi"
+quote_count = quotes_list_object.getCountOfQuotesByStudent(student_name)
+print(quote_count)
  
 
 
@@ -804,7 +1075,7 @@ q6 = Quote(6, "OK", "A2", "S4")
 quotes_list = [q1,q2,q3,q4,q5, q6]
 soma_QuotesList_object = QuotesList(quotes_list)
 quote_count = quotes_list_object.getCountOfQuotesByStudent("S1")
-print("Count of quotes submitted by S1 : " + str(quote_count))
+print("Count of quotes submitted by S1 : " + quote_count)
 
 
 # =================pranav manikonda #15======================
@@ -985,7 +1256,7 @@ print(update_status)
 # ========= Nikhitha Gollamudi: Method # 29 ========================
 print("===  Method #29 (Nikhitha Gollamudi) def getQuotesContainingBadWords()  method ====")
 mini_collection_29 = quotes_list_object.getQuotesContainingBadWords()
-mini_collection_29.printQuotes()
+#mini_collection_29.printQuotes()
 
 
 # ========= Nikhita Gollamudi: Method # 30 ========================
